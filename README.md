@@ -100,6 +100,8 @@ index 0000000..4c44452
 +Subproject commit 4c44452bbad18330428b7344edb2b83fac5d110f
 (END)
 
+ git commit -m "Homework Assignment 3 Exploring Git History"
+
 ## Homework Assignment 4: Creating and Applying Tags
 
 
