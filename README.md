@@ -1,4 +1,6 @@
+##
 ## Homework Assigment 1: Initializing a local Repossitory
+##
 ```bash
 cd e://Programming/DevOps_Training/
 mk dir MyRepo
@@ -11,8 +13,10 @@ git status
 git add --all
 git commit -m "Init commit"
 ```
-
+##
 ## Homework Assignment 2: Basic Version Control
+##
+
 ```bash
 git checkout -b feature-branch
 nano README.md #Maked changes
@@ -21,8 +25,10 @@ git commit
 git checkout master
 git merge feature-branch
 ```
-
+##
 ## Homework Assignment 3: Exploring Git History
+##
+
 $ git log
 commit b9def8424354adcda0ecafa3517688b003fd5005 (HEAD -> master)
 Author: Dmitry Burlyaev <dm.burlyaev@gmail.com>
@@ -102,7 +108,61 @@ index 0000000..4c44452
 
  git commit -m "Homework Assignment 3 Exploring Git History"
 
+##
 ## Homework Assignment 4: Creating and Applying Tags
+##
+
+$ git log --oneline
+e8bc005 (HEAD -> master) Working with branches
+1b49005 Homework Assignment 3 Exploring Git History
+b9def84 Homework Assignment 2: Basic Version Control
+ddb514b (feature-branch) Init commit
+
+
+$ git log ddb514b
+commit ddb514bb02b04b0e58d4eef19a52d9e57a5c3eba (tag: v1.0, feature-branch)
+Author: Dmitry Burlyaev <dm.burlyaev@gmail.com>
+Date:   Tue Sep 24 22:37:01 2024 +0300
+
+    Init commit
+
+$ git log --oneline
+e8bc005 (HEAD -> master, tag: v2.0, tag: v1.3) Working with branches
+1b49005 (tag: v1.2) Homework Assignment 3 Exploring Git History
+b9def84 (tag: v1.1) Homework Assignment 2: Basic Version Control
+ddb514b (tag: v1.0, feature-branch) Init commit
+
+$ git log e8bc005
+commit e8bc0059eae754b3fe9868a7b588dda3459b47af (HEAD -> master, tag: v2.0, tag: v1.3)
+Author: Dmitry Burlyaev <dm.burlyaev@gmail.com>
+Date:   Tue Sep 24 23:19:59 2024 +0300
+
+    Working with branches
+
+commit 1b490051079a3b409810a51988bc088aa50eb251 (tag: v1.2)
+Author: Dmitry Burlyaev <dm.burlyaev@gmail.com>
+Date:   Tue Sep 24 23:12:29 2024 +0300
+
+    Homework Assignment 3 Exploring Git History
+
+commit b9def8424354adcda0ecafa3517688b003fd5005 (tag: v1.1)
+Author: Dmitry Burlyaev <dm.burlyaev@gmail.com>
+Date:   Tue Sep 24 22:51:49 2024 +0300
+
+    Homework Assignment 2: Basic Version Control
+
+commit ddb514bb02b04b0e58d4eef19a52d9e57a5c3eba (tag: v1.0, feature-branch)
+Author: Dmitry Burlyaev <dm.burlyaev@gmail.com>
+Date:   Tue Sep 24 22:37:01 2024 +0300
+
+    Init commit
+``` bash
+nano README.md
+git add --all
+git commit
+git tag -a v2.0 -m "Version 2.0
+```
+
 
 
 
