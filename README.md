@@ -127,13 +127,13 @@ Date:   Tue Sep 24 22:37:01 2024 +0300
     Init commit
 
 $ git log --oneline
-e8bc005 (HEAD -> master, tag: v2.0, tag: v1.3) Working with branches
+e8bc005 (HEAD -> master, tag: v1.3) Working with branches
 1b49005 (tag: v1.2) Homework Assignment 3 Exploring Git History
 b9def84 (tag: v1.1) Homework Assignment 2: Basic Version Control
 ddb514b (tag: v1.0, feature-branch) Init commit
 
 $ git log e8bc005
-commit e8bc0059eae754b3fe9868a7b588dda3459b47af (HEAD -> master, tag: v2.0, tag: v1.3)
+commit e8bc0059eae754b3fe9868a7b588dda3459b47af (HEAD -> master, tag: v1.3)
 Author: Dmitry Burlyaev <dm.burlyaev@gmail.com>
 Date:   Tue Sep 24 23:19:59 2024 +0300
 
@@ -162,6 +162,35 @@ git add --all
 git commit
 git tag -a v2.0 -m "Version 2.0
 ```
+$ git log --oneline
+686ee0f (HEAD -> master, tag: v2.0) Homework Assignment 4: Creating and Applying Tags
+e8bc005 (tag: v1.3) Working with branches
+1b49005 (tag: v1.2) Homework Assignment 3 Exploring Git History
+b9def84 (tag: v1.1) Homework Assignment 2: Basic Version Control
+ddb514b (tag: v1.0, feature-branch) Init commit
+
+## lightweight tags
+
+
+git tag v1.5-lw b9def84
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (master)
+$ git tag
+v1.0
+v1.1
+v1.2
+v1.3
+v1.5-lw
+v2.0
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (master)
+$ git log --oneline
+686ee0f (HEAD -> master, tag: v2.0) Homework Assignment 4: Creating and Applying Tags
+e8bc005 (tag: v1.3) Working with branches
+1b49005 (tag: v1.2) Homework Assignment 3 Exploring Git History
+b9def84 (tag: v1.5-lw, tag: v1.1) Homework Assignment 2: Basic Version Control
+ddb514b (tag: v1.0, feature-branch) Init commit
+
 
 
 
