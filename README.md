@@ -11,3 +11,13 @@ git status
 git add --all
 git commit -m "Init commit"
 ```
+
+## Homework Assignment 2: Basic Version Control
+```bash
+git checkout -b feature-branch
+nano README.md #Maked changes
+git add --all
+git commit
+git checkout master
+git merge feature-branch
+```
