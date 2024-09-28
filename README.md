@@ -677,6 +677,41 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 
+## Homework Assignment 7: Git Aliases and Configuration
 
- cat README.md
+1. Configure your Git username and email globally.
+
+        git config --global user.name "Dmitry Burlyaev"
+
+        git config --global user.email "dm.burlyaev@gmail.com"
+
+2. Set up a custom alias for a frequently used Git command.
+```
+	git config --global alias.chout checkout
+ 	git config --global alias.stat status
+```
+```
+$ cat ~/.gitconfig
+```
+[user]
+        email = dm.burlyaev@gmail.com
+        name = Dmitry Burlyaev
+[alias]
+        chout = checkout
+        stat = status
+
+3. Use the git config command to verify your configuration changes.
+```
+$ git stat
+```
+On branch experimental-feature
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+        modified:   README.md
+        modified:   sa.it-academy.by (modified content)
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
 
