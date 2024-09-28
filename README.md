@@ -611,3 +611,72 @@ experimental-content
           Description of project
           tag v2.0
           experimantal content
+
+## Homework Assignment 6: Stashing Changes
+
+1. Create a new branch named experimental-feature.
+```bush       
+ git checkout -b experimental-feature
+```
+2. Make some changes to the README.md file but do not commit them.
+```bush
+ echo 'experimental-content' >> README.md
+```
+3. Use git stash to temporarily store your changes.
+ ```
+git stash
+```
+Saved working directory and index state WIP on experimental-feature: 17b1142 Homework Assignment 5: Undoing Changes finished
+```
+git status
+```
+On branch experimental-feature
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+   modified:   sa.it-academy.by (modified content)
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+```bush
+$ git stash list
+```
+stash@{0}: WIP on experimental-feature: 17b1142 Homework Assignment 5: Undoing Changes finished
+stash@{1}: WIP on experimental-feature: 17b1142 Homework Assignment 5: Undoing Changes finished
+stash@{2}: WIP on experimental-feature: 17b1142 Homework Assignment 5: Undoing Changes finished
+
+
+
+
+4. Switch to another branch and make a different set of changes.
+```
+$ git checkout feature-branch
+```
+Switched to branch 'feature-branch'
+```
+$  git log --oneline
+```
+8fbe01c (HEAD -> feature-branch) Experimental content for feature branch
+ddb514b (tag: v1.0) Init commit
+
+
+
+5. Apply the changes from the stash to the experimental-feature branch.
+```
+$ git checkout experimental-feature
+$  git stash apply
+```
+On branch experimental-feature
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+        modified:   README.md
+        modified:   sa.it-academy.by (modified content)
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+ cat README.md
+
