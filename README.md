@@ -292,3 +292,302 @@ Changes not staged for commit:
 	modified:   sa.it-academy.by (new commits)
 
 no changes added to commit (use "git add" and/or "git commit -a")
+bug-fix
+3.Make another change and commit it.
+
+bug-fix-some-second-changes
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ echo 'bug-fix-some-second-changes' >> README.md
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git add --all
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git commit -m "Bug-fix-some-second-changes"
+[bug-fix 1e5d654] Bug-fix-some-second-changes
+ 1 file changed, 3 insertions(+)
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git log --oneline
+1e5d654 (HEAD -> bug-fix) Bug-fix-some-second-changes
+33f434b Bug-fix branch
+f2267d3 (master) Homework Assignment 5 commit 1
+e066565 (tag: v2.0) Applying Lightweight Tags
+686ee0f (tag: v1.9-lw) Homework Assignment 4: Creating and Applying Tags
+e8bc005 (tag: v1.3) Working with branches
+1b49005 (tag: v1.2) Homework Assignment 3 Exploring Git History
+b9def84 (tag: v1.5-lw, tag: v1.1) Homework Assignment 2: Basic Version Control
+ddb514b (tag: v1.0, feature-branch) Init commit
+
+4.Use git reset to undo the most recent commit while keeping the changes.
+ ```bush      
+ git reset
+```
+5.Explore the effects of git reset with different options (soft, mixed, hard).
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ echo 'bug-fix-third' >> README.md
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git status
+On branch bug-fix
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+        modified:   README.md
+        modified:   sa.it-academy.by (modified content)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git status >> README.md
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git add README.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git status
+On branch bug-fix
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+        modified:   sa.it-academy.by (modified content)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.txt
+
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git status >> README.md
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git add README.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git status
+On branch bug-fix
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+        modified:   sa.it-academy.by (modified content)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.txt
+
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git ls-files -s
+100644 cd5b0e337c3de1d61ced476481dd2e4f003c26aa 0       .gitignore
+100644 a8c44c282cef078f34249db219771df7931f0743 0       README.md
+160000 2f8a47ce785b01cfba50c99f006421ce5f867cff 0       sa.it-academy.by
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git ls-files -s >> README.md
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git add file1.txt
+warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the next time Git touches it
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git ls-files -s
+100644 cd5b0e337c3de1d61ced476481dd2e4f003c26aa 0       .gitignore
+100644 a8c44c282cef078f34249db219771df7931f0743 0       README.md
+100644 8e66654a5477b1bf4765946147c49509a431f963 0       file1.txt
+160000 2f8a47ce785b01cfba50c99f006421ce5f867cff 0       sa.it-academy.by
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git ls-files -s >> README.md
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git reset --hard
+HEAD is now at e8c936e Bug-fix-some-second-changes02
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ cat >> README.md
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$  git ls-files -s
+100644 cd5b0e337c3de1d61ced476481dd2e4f003c26aa 0       .gitignore
+100644 0c5a9d0713a5ed99310f8606ca9053efdb9398c3 0       README.md
+160000 2f8a47ce785b01cfba50c99f006421ce5f867cff 0       sa.it-academy.by
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$
+
+HEAD is now at e8c936e Bug-fix-some-second-changes02
+
+
+
+	Here we have performed a "hard reset" using the --hard option.
+        Git displays output indicating that HEAD points to
+        last commit. 
+	Next checked the status of the repo using
+        git status. 
+	Git indicates that there are no pending changes. 
+        Also checked the status of the Staging Index and see that
+        it was reset to the point before new_file was added. 
+        Changes to README.md and addition of file1.txt
+        were destroyed.
+
+*GIT RESET MIXED
+
+
+bug-fix-third
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git add --all
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'new_file_01', LF will be replaced by CRLF the next time Git touches it
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git status
+On branch bug-fix
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+        new file:   new_file_01
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+        modified:   sa.it-academy.by (modified content)
+
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git ls-files -s
+100644 cd5b0e337c3de1d61ced476481dd2e4f003c26aa 0       .gitignore
+100644 6b545730af1234762983e7f1b5e8232b25b1b85c 0       README.md
+100644 8e66654a5477b1bf4765946147c49509a431f963 0       new_file_01
+160000 2f8a47ce785b01cfba50c99f006421ce5f867cff 0       sa.it-academy.by
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$  git reset --mixed
+Unstaged changes after reset:
+M       README.md
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git status
+On branch bug-fix
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+        modified:   README.md
+        modified:   sa.it-academy.by (modified content)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        new_file_01
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git ls-files -s
+100644 cd5b0e337c3de1d61ced476481dd2e4f003c26aa 0       .gitignore
+100644 0c5a9d0713a5ed99310f8606ca9053efdb9398c3 0       README.md
+160000 2f8a47ce785b01cfba50c99f006421ce5f867cff 0       sa.it-academy.by
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ ls -la
+total 34
+drwxr-xr-x 1 Fuzzy 197609     0 Sep 28 14:56 ./
+drwxr-xr-x 1 Fuzzy 197609     0 Sep 28 13:56 ../
+drwxr-xr-x 1 Fuzzy 197609     0 Sep 28 14:59 .git/
+-rw-r--r-- 1 Fuzzy 197609    38 Sep 28 14:13 .gitignore
+-rw-r--r-- 1 Fuzzy 197609 13693 Sep 28 14:56 README.md
+-rw-r--r-- 1 Fuzzy 197609    17 Sep 28 14:56 new_file_01
+drwxr-xr-x 1 Fuzzy 197609     0 Sep 28 13:24 sa.it-academy.by/
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git status
+On branch bug-fix
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+        modified:   README.md
+        modified:   sa.it-academy.by (modified content)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        new_file_01
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+$ git ls-files -s
+100644 cd5b0e337c3de1d61ced476481dd2e4f003c26aa 0       .gitignore
+100644 0c5a9d0713a5ed99310f8606ca9053efdb9398c3 0       README.md
+160000 2f8a47ce785b01cfba50c99f006421ce5f867cff 0       sa.it-academy.by
+
+Fuzzy@Kitsune-PC MINGW64 /e/Programming/DevOps_Training/MyRepo (bug-fix)
+
+
+	In this case, we performed a “mixed reset”. Analysis of "git status" and "git ls-files" shows that the stagging index has 	returned to a point where "new_file_01" has not been added to the index. The SHA object for the README.md file has been 	reset to the previous version. Also, "git status" shows that there are changes in the README.md file, and "new_file_01" 	is not tracked at all, even though it is in .
+	This is clearly --mixed behavior. The stagging index has been reset, and the expected changes have been transferred to 	the working directory. Compare this with the --hard Reset case.
+	where the staging index was reset, the working directory was also reset and those updates were lost.
+
+* GIT SOFT RESET
+```bush
+$ git add README.md
+$ rm new_file_01
+$ git status
+```
+
+On branch bug-fix
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+        modified:   sa.it-academy.by (modified content)
+```bush
+$  git ls-files -s
+```
+100644 cd5b0e337c3de1d61ced476481dd2e4f003c26aa 0       .gitignore
+100644 88f6c11fa6bf37ac5045d3589f6cba501f7f78fb 0       README.md
+160000 2f8a47ce785b01cfba50c99f006421ce5f867cff 0       sa.it-academy.by
+```bussh
+$  git commit -m "Prepering for bug-fix-third to soft reset"
+```
+[bug-fix 60d2994] Prepering for bug-fix-third to soft reset
+ 1 file changed, 250 insertions(+)
+```bush
+$ git log --oneline
+```
+60d2994 (HEAD -> bug-fix) Prepering for bug-fix-third to soft reset
+e8c936e Bug-fix-some-second-changes02
+1e5d654 Bug-fix-some-second-changes
+33f434b Bug-fix branch
+f2267d3 (master) Homework Assignment 5 commit 1
+e066565 (tag: v2.0) Applying Lightweight Tags
+686ee0f (tag: v1.9-lw) Homework Assignment 4: Creating and Applying Tags
+e8bc005 (tag: v1.3) Working with branches
+1b49005 (tag: v1.2) Homework Assignment 3 Exploring Git History
+b9def84 (tag: v1.5-lw, tag: v1.1) Homework Assignment 2: Basic Version Control
+ddb514b (tag: v1.0, feature-branch) Init commit
+
