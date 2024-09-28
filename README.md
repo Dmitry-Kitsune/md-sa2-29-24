@@ -292,3 +292,4 @@ Changes not staged for commit:
 	modified:   sa.it-academy.by (new commits)
 
 no changes added to commit (use "git add" and/or "git commit -a")
+bug-fix
