@@ -87,7 +87,7 @@ create alias for script in your shell
 
 ```bush
 
-test
+test222
 
 
 ```
