@@ -78,7 +78,7 @@ To gitlab.com:D_Burlyaev/md-sa2-29-24.git
 ```
 ## Added email notifications
 
-
+![alt text](https://github.com/Dmitry-Kitsune/md-sa2-29-24/blob/md-sa2-29-24/md-sa2-29-24/03.Git.Hosting/img/Ghub_notification.png "GitHub email")
 
 ```
 
