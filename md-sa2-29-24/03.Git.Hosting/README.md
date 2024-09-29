@@ -87,6 +87,7 @@ create alias for script in your shell
 
 
 
+
 6.list of upstream repositories should be extracted automatically for loop
 
 
