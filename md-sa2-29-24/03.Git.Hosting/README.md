@@ -86,15 +86,15 @@ To gitlab.com:D_Burlyaev/md-sa2-29-24.git
 create alias for script in your shell
 
 ```bush
-
-test222
-
-
+alias Autopush='./AutoPushScript.sh'
 ```
 
 
 
 6.list of upstream repositories should be extracted automatically for loop
+
+
+
 
 
 Create folder 03.GIT.Hosting, put all your repositories's urls to the file 03.GIT.Hosting/README.md + script and prepare PR (Pull Request)
