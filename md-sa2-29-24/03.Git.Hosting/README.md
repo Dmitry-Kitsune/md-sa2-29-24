@@ -85,6 +85,8 @@ To gitlab.com:D_Burlyaev/md-sa2-29-24.git
 5.Automate pushing your changes to all remote repositories (bash/python/go.. scripts)
 create alias for script in your shell
 
+
+
 6.list of upstream repositories should be extracted automatically for loop
 
 
